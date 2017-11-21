@@ -63,7 +63,6 @@
                 margin-bottom: 30px;
             }
         </style>
-        {!! editor_css() !!}
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -92,17 +91,6 @@
                 </div>
             </div>
         </div>
-            <form action="{{ url('mdtest') }}" method="post">
-                {{ csrf_field() }}
-            <div id="mdeditor">
-              <textarea class="form-control" name="content" style="display:none;">
-# Welcome to zixue.com
-### 歡迎來到zixue.com
-{{ url('mdtest') }}</textarea>
-            </div>
-            <input type="submit" value="submit">
-        </form>
-        {!! editor_js() !!}
-        {!! editor_config('mdeditor') !!}
+            
     </body>
 </html>
