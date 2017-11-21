@@ -7,47 +7,67 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+> Readme by rayc9223  
+> 服務器環境: CentOS-6.8 | Nginx-1.11.1 | MySQL-5.7.20 | PHP-7.1.11  
+> 項目框架: Laravel 5.5.0  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### 安裝說明:
+1. 使用命令提示字元克隆代碼:  
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+```
+git clone https://gitee.com/rayc9223/zixue.git
+```  
 
-## Learning Laravel
+2. 進入項目檔案夾  
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+```
+cd zixue
+```
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+3. 將 .env.example 複製一份並重命名為 .env, 配置環境信息  
 
-## Laravel Sponsors
+```
+cp .env.example .env
+```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+4. 安裝 composer 依賴
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
+```
+composer update
+```
 
-## Contributing
+5. 生成應用 Key
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+6. 創建數據表
+
+```
+php artisan migrate
+```
+
+7. 啟用本地伺服器( Apache 或 Nginx, 這裡用 Laravel 內建的伺服功能)
+
+```
+php artisan serve
+```
+
+**前台**  
+登錄: `127.0.0.1:8000/login`  
+註冊: `127.0.0.1:8000/register`
+
+**後台**  
+登錄: `127.0.0.1:8000/admin/login`  
+註冊: `127.0.0.1:8000/admin/register`
+
+
+### Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## License
+### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
